@@ -10,7 +10,6 @@
     <default>
         <amasty_helloworld>
             <general>
-                <enable>1</enable>
                 <logo></logo>
             </general>
         </amasty_helloworld>
