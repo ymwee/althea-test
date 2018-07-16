@@ -1,4 +1,6 @@
 .amasty-helloworld-block{
     clear: both;
     float: none;
+    width: 100px;
+    height: 50px;
 }
