@@ -30,9 +30,13 @@ class HelloWorld extends \Magento\Framework\View\Element\Template
 
     public function getLogo() 
     {
-        $folderName = 'amasty_helloworld/logo';
-        $imgName    = $this->_helper->getLogo();
-        $path       = $folderName . '/' . $imgName;
+        if (empty($this->_helper->getLogo())) {
+            $path = 'wysiwyg/collection/collection-performance.jpg';
+        } else {
+            $folderName = 'amasty_helloworld/logo';
+            $imgName    = $this->_helper->getLogo();
+            $path       = $folderName . '/' . $imgName;
+        }
 
         return $this->_storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . $path;
     }
