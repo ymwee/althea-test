@@ -13,7 +13,6 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     protected $_scopeConfig;
 
-    CONST ENABLE      = 'amasty_helloworld/general/enable';
     CONST LOGO        = 'amasty_helloworld/general/logo';
 
     public function __construct(
@@ -23,10 +22,6 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         parent::__construct($context);
 
         $this->_scopeConfig = $scopeConfig;
-    }
-
-    public function getEnable(){
-        return $this->_scopeConfig->getValue(self::ENABLE);
     }
 
     public function getLogo(){
