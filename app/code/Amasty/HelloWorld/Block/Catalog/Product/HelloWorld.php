@@ -13,48 +13,28 @@ class HelloWorld extends \Magento\Framework\View\Element\Template
      */
     protected $_helper;
 
-    /**
-     * @var \Magento\Framework\ObjectManagerInterface
-     */
-    protected $_objectManager;
+    protected $_storeManager;
 
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         array $data = [],
         \Amasty\HelloWorld\Helper\Data $helper,
-        \Magento\Framework\ObjectManagerInterface $objectManager
+        \Magento\Store\Model\StoreManagerInterface $storeManager
     ) {
         parent::__construct($context, $data);
 
         $this->_helper
             = $helper;
-        $this->_objectManager = $objectManager;
+        $this->_storeManager = $storeManager;
     }
 
-    public function getBlockLabel(){
-        return $this->_helper->getBlockLabel();
-    }
-
-    public function getTextAlign(){
-        return $this->_helper->getTextAlign();
-    }
-
-    protected function _toHtml()
+    public function getLogo() 
     {
-       if ($this->_helper->getEnable()){
-            return parent::_toHtml();
-       }
-        else {
-            return '';
-        }
-    }
+        $folderName = 'amasty_helloworld/logo';
+        $imgName    = $this->_helper->getLogo();
+        $path       = $folderName . '/' . $imgName;
 
-    public function getCollection()
-    {
-        $model = $this->_objectManager->create('Amasty\HelloWorld\Model\HelloWorld');
-        $collection = $model->getCollection();
-
-        return $collection;
+        return $this->_storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . $path;
     }
 
 }
