@@ -13,7 +13,9 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     protected $_scopeConfig;
 
-    CONST LOGO        = 'amasty_helloworld/general/logo';
+    CONST ENABLE      = 'amasty_helloworld/general/enable';
+    CONST BLOCK_LABEL = 'amasty_helloworld/general/block_label';
+    CONST TEXT_ALIGN  = 'amasty_helloworld/general/text_align';
 
     public function __construct(
         \Magento\Framework\App\Helper\Context $context,
@@ -24,8 +26,16 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         $this->_scopeConfig = $scopeConfig;
     }
 
-    public function getLogo(){
-        return $this->_scopeConfig->getValue(self::LOGO);
+    public function getEnable(){
+        return $this->_scopeConfig->getValue(self::ENABLE);
+    }
+
+    public function getBlockLabel(){
+        return $this->_scopeConfig->getValue(self::BLOCK_LABEL);
+    }
+
+    public function getTextAlign(){
+        return $this->_scopeConfig->getValue(self::TEXT_ALIGN);
     }
 }
 
