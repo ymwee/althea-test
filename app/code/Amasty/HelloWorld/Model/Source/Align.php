@@ -23,6 +23,10 @@ class Align implements \Magento\Framework\Option\ArrayInterface
             array(
                 'value' => 'center',
                 'label' => __('Center Position')
+            ),
+            array(
+                'value' => 'right',
+                'label' => __('Right Position')
             )
         );
     }
@@ -35,7 +39,8 @@ class Align implements \Magento\Framework\Option\ArrayInterface
     public function toArray()
     {
         return ['left' => __('Left Position'),
-                'center' => __('Center Position')
+                'center' => __('Center Position'),
+                'right' => __('Right Position')
         ];
     }
 }
