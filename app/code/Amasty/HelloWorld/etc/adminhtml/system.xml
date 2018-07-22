@@ -20,15 +20,25 @@
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0"
                    showInStore="0">
                 <label>General</label>
-                <field id="logo" translate="label comment" type="image" sortOrder="10" showInDefault="1" 
+                <field id="enable" translate="label comment" type="select" sortOrder="10" showInDefault="1"
                        showInWebsite="1" showInStore="1">
-                    <label>Logo</label>
-                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
-                    <upload_dir config="system/filesystem/media" scope_info="1">amasty_helloworld/logo</upload_dir>
-                    <base_url type="media" scope_info="1">amasty_helloworld/logo</base_url>
+                    <label>Enable Hello World</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                     <comment>
-                        Image for Hello World.
+                        Comment for `Enable Hello World` setting.
                     </comment>
+                </field>
+                <field id="block_label" translate="label" type="image" sortOrder="20" showInDefault="1" 
+                       showInWebsite="1" showInStore="1">
+                    <label>Block Label</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">amasty_helloworld/block_label</upload_dir>
+                    <base_url type="media" scope_info="1">amasty_helloworld/block_label</base_url>
+                </field>
+                <field id="text_align" translate="label" type="select" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Text Align</label>
+                    <source_model>Amasty\HelloWorld\Model\Source\Align</source_model>
                 </field>
             </group>
         </section>
