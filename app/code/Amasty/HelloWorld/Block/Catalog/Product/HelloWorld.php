@@ -49,7 +49,7 @@ class HelloWorld extends \Magento\Framework\View\Element\Template
         if ($position == "center") {
             $style = "margin: 0 auto;";
         } elseif ($position == "right") {
-            $style = "margin-left: 0px;";
+            $style = "margin-left: auto;";
         }
         return $style;
     }
