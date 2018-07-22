@@ -41,8 +41,17 @@ class HelloWorld extends \Magento\Framework\View\Element\Template
         return $this->_storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . $path;
     }
 
-    public function getTextAlign(){
-        return $this->_helper->getTextAlign();
+    public function getTextAlign() 
+    {
+        $position = $this->_helper->getTextAlign();
+        $style    = "";
+
+        if ($position == "center") {
+            $style = "margin: 0 auto;";
+        } elseif ($position == "right") {
+            $style = "margin-left: 0px;";
+        }
+        return $style;
     }
 
     protected function _toHtml()
