@@ -33,7 +33,7 @@ class HelloWorld extends \Magento\Framework\View\Element\Template
         if (empty($this->_helper->getBlockLabel())) {
             $path = 'wysiwyg/collection/collection-performance.jpg';
         } else {
-            $folderName = 'amasty_helloworld/logo';
+            $folderName = 'amasty_helloworld/block_label';
             $imgName    = $this->_helper->getBlockLabel();
             $path       = $folderName . '/' . $imgName;
         }
