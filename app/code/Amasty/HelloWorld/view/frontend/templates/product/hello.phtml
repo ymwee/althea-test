@@ -5,7 +5,6 @@
  * @package Amasty_HelloWorld
  */
 ?>
-<div class="amasty-helloworld-block" style="text-align: <?= $this->getTextAlign()?>">
-    <h3 class="label"><img src="<?php echo $this->getBlockLabel(); ?>" /></h3>
-    <?=__('Hello World');?>
+<div class="amasty-helloworld-block" style="<?= $this->getTextAlign()?>">
+    <h3 class="label"><img src="<?= $this->getBlockLabel() ?>" /></h3>
 </div>
